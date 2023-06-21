@@ -22,10 +22,11 @@ struct NewPostForm: View {
             Form {
                 Section("Post Title") {
                     TextField("Title", text: $post.title)
-               
+                        .autocorrectionDisabled(true)
                 }
                 Section("Author Name") {
                     TextField("Name", text: $post.authorName)
+                        .autocorrectionDisabled(true)
                 }
 
                 Section("Content") {
@@ -50,7 +51,7 @@ struct NewPostForm: View {
             .navigationTitle("New Post")
         }
         .disabled(state == .working)
-        .alert("Cannot Create Post", isPresented: $state.isError, actions: {}) {
+        .alert("Cannot create post", isPresented: $state.isError, actions: {}) {
             Text("Sorry, something went wrong.")
         }
     }
