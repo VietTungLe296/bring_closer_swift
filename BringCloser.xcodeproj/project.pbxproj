@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		6C29BC552A4325C4000B5DCF /* Alert+Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C29BC542A4325C4000B5DCF /* Alert+Error.swift */; };
+		6C29BC572A432A91000B5DCF /* PostRowViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C29BC562A432A91000B5DCF /* PostRowViewModel.swift */; };
 		6C38E5832A41D93600801ACC /* BringCloserApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C38E5822A41D93600801ACC /* BringCloserApp.swift */; };
 		6C38E5872A41D93700801ACC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6C38E5862A41D93700801ACC /* Assets.xcassets */; };
 		6C38E58A2A41D93700801ACC /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6C38E5892A41D93700801ACC /* Preview Assets.xcassets */; };
@@ -27,6 +28,7 @@
 
 /* Begin PBXFileReference section */
 		6C29BC542A4325C4000B5DCF /* Alert+Error.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Alert+Error.swift"; sourceTree = "<group>"; };
+		6C29BC562A432A91000B5DCF /* PostRowViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostRowViewModel.swift; sourceTree = "<group>"; };
 		6C38E57F2A41D93600801ACC /* BringCloser.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BringCloser.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6C38E5822A41D93600801ACC /* BringCloserApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BringCloserApp.swift; sourceTree = "<group>"; };
 		6C38E5862A41D93700801ACC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -126,6 +128,7 @@
 			isa = PBXGroup;
 			children = (
 				6C38E59D2A41DD4300801ACC /* PostsViewModel.swift */,
+				6C29BC562A432A91000B5DCF /* PostRowViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -235,6 +238,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6C29BC572A432A91000B5DCF /* PostRowViewModel.swift in Sources */,
 				6C38E5952A41DBE100801ACC /* Post.swift in Sources */,
 				6C38E59C2A41DD1000801ACC /* PostRepository.swift in Sources */,
 				6C38E59E2A41DD4300801ACC /* PostsViewModel.swift in Sources */,
