@@ -6,7 +6,6 @@
 //
 
 import SwiftUI
-
 struct PostList: View {
     @StateObject var viewModel = PostsViewModel()
     
@@ -33,12 +32,15 @@ struct PostList: View {
                 case let .loaded(posts):
                     List(posts) { post in
                         if searchText.isEmpty || post.contains(searchText) {
-                            PostRow(post: post)
+                            PostRow(
+                                post: post,
+                                deleteAction: viewModel.makeDeleteAction(for: post))
                         }
                     }
+                    .searchable(text: $searchText)
+                    .animation(.default, value: posts)
                 }
             }
-            .searchable(text: $searchText)
             .navigationTitle("Posts")
             .toolbar {
                 Button {
@@ -56,6 +58,7 @@ struct PostList: View {
         }
     }
 }
+
 #if DEBUG
 struct PostList_Previews: PreviewProvider {
     static var previews: some View {

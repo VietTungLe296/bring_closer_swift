@@ -17,13 +17,6 @@ class PostsViewModel: ObservableObject {
         self.postsRepository = postRepository
     }
     
-    func makeCreateAction() -> NewPostForm.CreateAction {
-        return { [weak self] post in
-            try await self?.postsRepository.create(post)
-            self?.posts.value?.insert(post, at: 0)
-        }
-    }
-    
     func fetchPosts() {
         Task {
             do {
@@ -31,6 +24,20 @@ class PostsViewModel: ObservableObject {
             } catch {
                 print("[PostsViewModel] Cannot fetch posts: \(error)")
             }
+        }
+    }
+    
+    func makeCreateAction() -> NewPostForm.CreateAction {
+        return { [weak self] post in
+            try await self?.postsRepository.create(post)
+            self?.posts.value?.insert(post, at: 0)
+        }
+    }
+    
+    func makeDeleteAction(for post : Post) -> PostRow.DeleteAction {
+        return { [weak self] in
+            try await self?.postsRepository.delete(post)
+            self?.posts.value?.removeAll() { $0.id == post.id }
         }
     }
 }
